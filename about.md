@@ -13,4 +13,8 @@ Below are the fundamental engineering classes I have taken so far:
   <h5>&#x2022; ELEC 301 </h5>
   <h5>&#x2022; ELEC 311 </h5>
   <h5>&#x2022; STAT/ELEC 321 </h5>
+  <h5><li> ELEC 341</li></h5>
+  <h5>&#x2022; ELEC 301 </h5>
+  <h5>&#x2022; ELEC 311 </h5>
+  <h5>&#x2022; STAT/ELEC 321 </h5>
 </div>
