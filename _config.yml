@@ -5,9 +5,9 @@ author: Alvina G
 
 # The `>` after `description:` means to ignore line-breaks until next key.
 # If you want to omit the line-break after the end of text, use `>-` instead.
-description: >
+description: >-
   Welcome to my website! This is a running journal 
-  of all of my electrical-engineering related projects and endeavours.
+  of all of my electrical-engineering related projects and endeavours. Enjoy!
 
 # Build settings
 
