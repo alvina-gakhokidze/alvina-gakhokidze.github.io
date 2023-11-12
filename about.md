@@ -12,10 +12,10 @@ Below are the fundamental engineering classes I have taken so far:
   <ul>
     <li> 3rd Year Courses </li>
       <ul>
-       <h5><li> ELEC 341</li></h5>
-       <h5><li> ELEC 301</li></h5>
-       <h5><li> ELEC 311</li></h5>
-       <h5><li> STAT/ELEC 321</li></h5>  
+       <h5><li> ELEC 341: Systems and Control </li></h5>
+       <h5><li> ELEC 301: Electronic Circuits</li></h5>
+       <h5><li> ELEC 311: Electromagnetic Fields and Waves</li></h5>
+       <h5><li> STAT/ELEC 321: Stochastic Signals and Systems</li></h5>  
      </ul>
   </ul>
 </div>
