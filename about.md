@@ -4,15 +4,15 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Hello! My name is Alvina Gakhokidze, and I am a third-year electrical engineering student at the University of British Columbia. I chose to study electrical engineering because of the creative freedom that this field allows, and I hope this will be conveyed to you as you read through my projects below.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Below are the fundamental engineering classes I have taken so far:
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+<h3>&#x2022; ELEC 341
+<h3>&#x2022; ELEC 301
+<h3>&#x2022; ELEC 311
+<h3>&#x2022; STAT/ELEC 321
+
 
 
 [jekyll-organization]: https://github.com/jekyll
