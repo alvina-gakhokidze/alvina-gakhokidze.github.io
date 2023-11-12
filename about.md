@@ -17,5 +17,16 @@ Below are the fundamental engineering classes I have taken so far:
        <li> ELEC 311: Electromagnetic Fields and Waves</li>
        <li> STAT/ELEC 321: Stochastic Signals and Systems</li>  
      </ul>
+    <li>2nd Year Courses</li>
+    <ul>
+       <li> ELEC 291: Electrical Engineering Design Studio I </li>
+       <li> CPEN 211: Computing Systems I </li>
+       <li> ELEC 221: Signals and Systems</li>
+       <li> ELEC 202: Circuit Analysis II</li>
+       <li> ELEC 201: Circuit Analysis I</li>
+       <li> CPSC 259: Data Structures and Algorithms for Electrical Engineers</li>
+       <li> MATH 253: Multivariable Calculus</li>
+       <li> MATH 256: Differential Equations</li>
+     </ul>
   </ul>
 </div>
