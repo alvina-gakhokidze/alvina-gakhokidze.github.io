@@ -13,6 +13,3 @@ Below are the fundamental engineering classes I have taken so far:
 <h5>&#x2022; ELEC 311 </h5>
 <h5>&#x2022; STAT/ELEC 321 </h5>
 
-
-
-[jekyll-organization]: https://github.com/jekyll
