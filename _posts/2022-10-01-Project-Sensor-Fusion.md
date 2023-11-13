@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Project: Films in a Flash"
+title: "Project: Sensor Fusion"
 categories: art
 author:
 - Alvina
