@@ -39,7 +39,9 @@ This will not be a detailed walkthrough, but here are the general steps I used:
 5. Write the firmware for collecting the data continuously during flight. This is very easy as it just requires a simple loop where you read from every sensor (the flight data recorder just collects data, it does not do any sensor fusion). 
 
 This is what the schematic looked like:
+
 <img src="/assets/images/fdr_schematic.png" style="width:40%">
 
-And this was the PCB layout (keep in mind this was my first time designing and optimizing a pcb layout XD ):
+And this was the PCB layout (keep in mind this was my first time designing and optimizing a pcb layout XD):
+
 <img src="/assets/images/fdr_pcb_layout.png" style="width:40%">
