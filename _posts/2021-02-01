@@ -18,39 +18,98 @@ The image on the left was produced from a clip from the movie “Shrek”, and t
 ## Materials Used
 
 - Arduino Uno 
+- PhotoResistors
+- Breadboard
+- Basic resistors/wires/etc
 
 ## Helpful Links for Explorers
+- [jekyll](https://p5js.org/)
 
+## Step By Step Playthrough
 
+### Arduino Code
+The circuit is very simple - it’s simply three phototransistors connected to analog input pins. The majority of this project is actually coding!
 
-### Some great subheading (h3)
+The first step is to create the code for the phototransistors to read the light values. We need to map the numbers they produce to values from 0-100 since we’ll be giving RBG values as percentages when it comes time to print the colours. 
 
-Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum.
-
-Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc.
-
-### Some great subheading (h3)
-
-Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.
-
-> This quote will *change* your life. It will reveal the <i>secrets</i> of the universe, and all the wonders of humanity. Don't <em>misuse</em> it.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt.
-
-### Some great subheading (h3)
-
-Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum.
+The following Arduino code is quite straightforward:
 
 ```html
-<html>
-  <head>
-  </head>
-  <body>
-    <p>Hello, World!</p>
-  </body>
-</html>
+const int redPIN = A0;
+
+const int greenPIN = A1;
+
+const int bluePIN = A2;
+
+int redVal, greenVal, blueVal;
+
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  redVal = analogRead(redPIN);
+  greenVal = analogRead(greenPIN);
+  blueVal = analogRead(bluePIN);
+
+
+  redVal = map(redVal, 0, 50, 0, 100);
+
+  greenVal = map(greenVal, 0, 50, 0, 100);
+
+  blueVal = map(blueVal, 0, 50, 0, 100);
+
+  Serial.print(redVal);
+  Serial.print(" ");
+  Serial.print(greenVal);
+  Serial.print(" ");
+  Serial.println(blueVal);
+  delay(100);
+
+}
 ```
 
+The next step is all of the python code!
+
+### The Ugly Code
+
+Our first script will collect the data that the Arduino code prints on the serial monitor. Because the Arduino code prints the R G B values on one line, we will put each line into a list of its own with 3 entries (called temp_list)- one for each colour value. These small lists will be put into one large list, which I’ve named the rgb_list. The following site explains how to read the serial monitor through python: https://problemsolvingwithpython.com/11-Python-and-External-Hardware/11.04-Reading-a-Sensor-with-Python/. 
+
+The code below already follows these steps. 
+
+ ```html
+import serial
+import time
+
+ser = serial.Serial("/dev/cu.usbmodem14201", 9600)
+time.sleep(2)
+
+rgb_data = []
+
+for i in range(500):
+    b = ser.readline()
+    string_n = b.decode()
+    string = string_n.rstrip() # removes \n and \r
+    # but doesn't remove spaces
+    print(string)
+    temp_list = string.split(" ")
+    temp_list_2 = []
+    for elem in temp_list:
+        temp_elem = int(elem)
+        temp_list_2.append(temp_elem)
+
+    print(temp_list_2)
+    rgb_data.append(temp_list_2)
+    time.sleep(0.1)
+
+print(rgb_data)
+
+ser.close()
+
+```
 
 In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.
 
