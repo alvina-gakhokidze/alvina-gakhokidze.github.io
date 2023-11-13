@@ -40,8 +40,8 @@ This will not be a detailed walkthrough, but here are the general steps I used:
 
 This is what the schematic looked like:
 
-<img src="/assets/images/fdr_schematic.png" style="width:40%">
+<img src="/assets/images/fdr_schematic.png" style="width:60%">
 
 And this was the PCB layout (keep in mind this was my first time designing and optimizing a pcb layout XD):
 
-<img src="/assets/images/fdr_pcb_layout.png" style="width:40%">
+<img src="/assets/images/fdr_pcb_layout.png" style="width:60%">
