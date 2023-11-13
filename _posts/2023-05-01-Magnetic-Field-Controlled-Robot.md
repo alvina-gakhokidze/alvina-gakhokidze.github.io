@@ -47,11 +47,11 @@ This is what it initially looked like:
 
 We tested each of the components individually before combining them (a lesson we learned from our past big project, where we did NOT do that...).
 
-Unfortunately, the inductors were receiving a very weak signal. We tested the receiver, and the measured voltage was exactly what it was supposed to be. This meant there was a problem with the inductors on the receiver, but we could not change them. 
+Unfortunately, the inductors were receiving a very weak signal. We tested the transmitter, and the measured voltage was exactly what it was supposed to be. This meant there was a problem with the inductors on the receiver, but we could not change them and had to think of other solutions. 
 
 <b> Modifying the Design </b>
 
-Our solution was to add cascaded amplifiers on the receiver - this required a lot of trial and error to determine how much we needed to amplify the signal. This is the messy final version of the car:
+My solution was to add cascaded amplifiers on the receiver - this required a lot of trial and error to determine how much we needed to amplify the signal. This is the messy final version of the car:
 
 <img src="/assets/images/final_car.jpg" style="width:60%">
 
