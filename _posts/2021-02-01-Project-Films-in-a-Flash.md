@@ -25,7 +25,7 @@ The image on the left was produced from a clip from the movie “Shrek”, and t
 </div> 
 </p>
 
-<p><img src="./shrekbarcode.png"/></p>
+<p><img src="../shrekbarcode.png"/></p>
 
 
 
