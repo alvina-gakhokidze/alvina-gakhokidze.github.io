@@ -18,6 +18,16 @@ The image on the left was produced from a clip from the movie “Shrek”, and t
 
 ![Shrek Barcode](../assets/Shrek_Barcode.png) ![Haikyu Barcode](../assets/Haikyu_Barcode.png)
 
+
+ <div class="row">
+  <div class="column">
+    <img src="../assets/Shrek_Barcode.png" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="../assets/Haikyu_Barcode.png" style="width:100%">
+  </div>
+</div> 
+
 ## Materials Used
 
 - Arduino Uno 
