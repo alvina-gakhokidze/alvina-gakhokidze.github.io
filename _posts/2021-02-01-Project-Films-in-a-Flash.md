@@ -15,8 +15,9 @@ I created a python program that produces generative art when a video clip is dis
 
 The image on the left was produced from a clip from the movie “Shrek”, and the image on the right was produced from a clip of the tv show “Haikyu!!”.
 
-<img src = "Shrek_Barcode.png" alt = "Shrek Movie Barkcode"> <img src = "Haikyu_Barcode.png" alt = "Haikyu!! Barcode">
 
+![Shrek Barcode](/alvina-gakhokidze.github.io/Shrek_Barcode.png)
+![Haikyu Barcode](/alvina-gakhokidze.github.io/Haikyu_Barcode.png)
 
 ## Materials Used
 
