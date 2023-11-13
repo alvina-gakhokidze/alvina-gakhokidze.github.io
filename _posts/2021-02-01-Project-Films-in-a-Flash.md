@@ -28,6 +28,17 @@ The image on the left was produced from a clip from the movie “Shrek”, and t
   </div>
 </div> 
 
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+
+
 ## Materials Used
 
 - Arduino Uno 
