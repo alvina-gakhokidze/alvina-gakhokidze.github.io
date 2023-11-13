@@ -34,12 +34,12 @@ Throughout this debugging process, I would test the data that the IMU collected 
 
 Unfortunately, I kept running into an error, where if the board is left untouched, the data would go into sinusoidal behaviour:
 
-<img src="../assets/Sensor_Fusion_Testing.png" style="width:40%">
+<img src="/assets/images/Sensor_Fusion_Testing.png" style="width:40%">
 
 
 Made some more changes, and noticed some improvements:
 
-<img src="../assets/Sensor_Fusion_LSM6DSM.png" style="width:40%">
+<img src="/assets/images/Sensor_Fusion_LSM6DSM.png" style="width:40%">
 
 Unfortunately, a lot of problems were still being caused because Juan Gallostra's code is for the LSM6DSM, whereas the Arduino Feather Sense has the LSM6DS33.
 
