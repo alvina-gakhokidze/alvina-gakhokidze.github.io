@@ -10,7 +10,7 @@ author:
 
 ## Quick Description
 The goal of this project was to design a magnetic field-controlled robot. It consists of two parts - are transmitter with two big inductors, and a receiver (the car). 
-Our professor provided some schematics and code, but the challenge of this project was to <em>integrate</em> everything and <em>complete</em> code. 
+Our professor provided some schematics and code, but the challenge of this project was to <em>integrate</em> everything and <em>complete</em> the code. 
 
 The car had two modes:
 * Controller Mode - receiving commands from the receiver to turn left/right, move backward/forwards, and turn backward left/backward right
