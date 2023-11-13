@@ -48,6 +48,13 @@ Our solution was to add cascaded amplifiers on the receiver - this required a lo
 
 <img src="/assets/images/final_car.jpg" style="width:60%">
 
+As part of the projet, we were required to make a video (or write an essay) about this project. You can see my teammates's (Ruth Tao) video on Youtube:
+
+ <iframe width="420" height="315"
+src="https://www.youtube.com/watch?v=LQKEylR-Bv8&ab_channel=RuthTau">
+</iframe> 
+
+
 
 
 
