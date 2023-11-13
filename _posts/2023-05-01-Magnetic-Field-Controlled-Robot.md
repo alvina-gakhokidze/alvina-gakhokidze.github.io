@@ -51,7 +51,7 @@ Unfortunately, the inductors were receiving a very weak signal. We tested the tr
 
 <b> Modifying the Design </b>
 
-My solution was to add cascaded amplifiers on the receiver - this required a lot of trial and error to determine how much we needed to amplify the signal. This is the messy final version of the car:
+My solution was to add cascaded amplifiers on the receiver - this required a lot of trial and error to determine how much we needed to amplify the signal. This is the messy final version of the car (not pictured is the additional, tiny, chaotic solder breadboard we had stuffed underneath):
 
 <img src="/assets/images/final_car.jpg" style="width:60%">
 
