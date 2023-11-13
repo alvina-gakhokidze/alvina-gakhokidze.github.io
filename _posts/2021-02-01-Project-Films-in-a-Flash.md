@@ -14,14 +14,10 @@ This idea was inspired by Tumblr user MovieBarcode ([moviebarcode](https://movie
 I created a python program that produces generative art when a video clip is displayed on screen in front of three photoresistors that are connected to an Arduino Uno microcontroller. The program reads the photoresistor’s RGB values from the Arduino serial monitor and combines them into one color value. I used the p5.js python library to append a stripe of that color every 0.3 seconds onto a canvas, creating an image of vertically-arranged differently coloured stripes, unique to the clip being played. 
 
 The image on the left was produced from a clip from the movie “Shrek”, and the image on the right was produced from a clip of the tv show “Haikyu!!”.
-
-![Shrek](/assets/images/Shrek_Barcode.png)
-![Haikyu](/assets/images/Haikyu_Barcode.png)
-
 <p>
  <div class="row">
     <img src="/assets/images/Shrek_Barcode.png" style="width:100%">  
-    <img src="./assets/images/Haikyu_Barcode.png" style="width:100%">
+    <img src="/assets/images/Haikyu_Barcode.png" style="width:100%">
 </div> 
 </p>
 
