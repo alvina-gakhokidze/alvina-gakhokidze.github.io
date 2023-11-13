@@ -5,7 +5,10 @@ categories: art
 author:
 - Alvina
 ---
+
 <b> Disclaimer:</b> I am publishing this written tutorial almost two years after I had completed the project. So there may be some incomplete code, and missing references for code borrowed. The execution is my own, though I may have borrowed small code tidbits from other sources. 
+
+<b>Status:</b> Completed Personal Project
 
 This idea was inspired by Tumblr user MovieBarcode ([moviebarcode](https://moviebarcode.tumblr.com/)). I decided to create my own version of this art using my Arduino set, photoresistors, and p5.js library. 
 
