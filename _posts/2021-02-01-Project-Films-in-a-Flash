@@ -133,6 +133,26 @@ The basic functions we need to know to print our coloured rectangles are:
  ```
 In that order. 
 
+<p>
+<b>createCanvas()</b> specifies the width and height of the canvas we want to use. 800 by 800 is a pretty good size, but you can go smaller or bigger if you’d like.
+
+<b>background()</b> specifies the colour of our canvas. If we only put one number, it gives us a colour on the greyscale, so putting 100 simply makes the canvas white.
+
+<b>colourMode()</b> helps us specify the colour system we want to use, in this case RGB, and the 100 tells the program that we’ll be giving values between 0-100. 
+
+<b>stroke()</b> is the function that specifies the outline colour of the rectangle. For our purposes, we’ll just make it match the main colour of the rectangle. We have to specify three values here, R, G, and B, all from 0-100. 
+
+<b>fill()</b> fills the main shape of the rectangle with one colour. Once again we specify three values like in stroke(). 
+
+<b>rect()</b> creates our rectangle and it’s shape. The first two numbers specify where on the canvas we want the top left corner of the rectangle to be located. The following two numbers give the width and height of the rectangle. 
+</p>
+
+We have to give the functions in that order for pyp5js to process it properly, although I’m not sure why.
+
+The width and height of each individual rectangle will depend on how many times you want to sample the colour from the video you are playing. In order to avoid calculating this by hand, I’ve simply made a variable called rec_space that divides the length of our canvas by the length of our list once our script is done reading and sorting the values from the serial monitor. 
+
+NOTE: The program will not work if you give a float value for the dimensions of the rectangles. Make sure to convert the rec_space variable into an integer like I have done. This will round the value down, and most likely you will not use the whole canvas space - but because it is white, we won’t even notice it. 
+
 
 
 In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.
