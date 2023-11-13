@@ -5,7 +5,7 @@ author:
 - Alvina
 ---
 
-<p>Status:</p> Archived project for the UBC AeroDesign Team (Sensors and Controls Subteam)
+<b>Status:</b> Archived project for the UBC AeroDesign Team (Sensors and Controls Subteam)
 
 ## Quick Description
 One of my previous projects was to design the Flight Data Recorder for our plane. This involved producing a set of requirements for the Black Box and choosing the optimal sensors for accurate data acquisition. I also had to scan datasheets for component restrictions, recommended circuits, and communication protocols.
