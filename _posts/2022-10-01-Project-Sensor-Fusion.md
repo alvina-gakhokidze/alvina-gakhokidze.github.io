@@ -19,7 +19,7 @@ This project involved creating sensor fusion code for our design team'ss glider 
 ## Helpful Links for Explorers
 - [How a Kalman Filter Works in Pictures](https://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/)
 - [Juan Gallostra's Kalman Filter](https://github.com/juangallostra/AltitudeEstimation?utm_source=platformio&utm_medium=piohome)
-- 
+- [LSM6DS33 Library](https://os.mbed.com/users/bclaus/code/LSM6DS33/file/4e7d663e26bd/LSM6DS33.h/)
 
 
 
