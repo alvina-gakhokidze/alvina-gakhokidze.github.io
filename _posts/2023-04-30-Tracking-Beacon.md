@@ -5,7 +5,7 @@ author:
 - Alvina
 ---
 
-<p>Status:</p> Archived project for the UBC AeroDesign Team (Sensors and Controls Subteam)
+<b>Status:</b> Archived project for the UBC AeroDesign Team (Sensors and Controls Subteam)
 
 ## Quick Description
 I worked on designing a closed-loop control system with stepper motors and encoders to control the movement of a tracking beacon; this beacon was supposed to point an antenna at our plane while it is flying. This project involved creating a set of requirements to select the optimal motors and encoders for our design, purchasing the components, soldering them together, and (currently) writing code to create a functioning closed-loop system.
