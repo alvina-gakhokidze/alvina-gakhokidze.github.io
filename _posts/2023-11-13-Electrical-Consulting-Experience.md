@@ -8,7 +8,7 @@ author:
 ## Quick Description
 I have had the opportunity to work on many different projects during my co-op at Ziyutec Inc. Ziyutec Inc. is an electrical engineering consulting company located in Richmond, BC.
 
-Here are the descriptions for some of the projects that I learned the most from :) Some details like addresses and exact issues have been omitted for the sake of privacy. (Please forgive the third-person language)
+Here are the descriptions for some of the projects that I have learned from the most :) Some details like addresses and exact issues have been omitted for the sake of privacy. (Please forgive the third-person language)
 
 
 ## Saskatoon Power Study
