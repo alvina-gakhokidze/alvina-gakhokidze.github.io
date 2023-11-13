@@ -15,8 +15,8 @@ I created a python program that produces generative art when a video clip is dis
 
 The image on the left was produced from a clip from the movie “Shrek”, and the image on the right was produced from a clip of the tv show “Haikyu!!”.
 
-![Shrek](../assets/Shrek_Barcode.png)
-![Haikyu](../assets/Haikyu_Barcode.png)
+![Shrek](./assets/Shrek_Barcode.png)
+![Haikyu](./assets/Haikyu_Barcode.png)
 
 <p>
  <div class="row">
