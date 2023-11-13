@@ -49,7 +49,7 @@ Our solution was to add cascaded amplifiers on the receiver - this required a lo
 <img src="/assets/images/final_car.jpg" style="width:60%">
 
 As part of the project, we were required to make a video (or write an essay) about this project. You can see my teammate's (Ruth Tao) video on YouTube by clicking on the image below:
-[![Video of Magnetic Field Controlled Robot](/assets/images/picture_of_testing_car.jpg)](https://www.youtube.com/watch?v=LQKEylR-Bv8&ab_channel=RuthTau)
+[![Video of Magnetic Field Controlled Robot](/assets/images/testing_car.jpg)](https://www.youtube.com/watch?v=LQKEylR-Bv8&ab_channel=RuthTau)
 
 
 
