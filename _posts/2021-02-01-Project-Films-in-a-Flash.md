@@ -20,7 +20,7 @@ The image on the left was produced from a clip from the movie “Shrek”, and t
 
 
  <div class="row">
-    <img src="../assets/Shrek_Barcode.png" style="width:33%">       
+    <img src="../assets/Shrek_Barcode.png" style="width:33%">   <p></p>    
     <img src="../assets/Haikyu_Barcode.png" style="width:33%">
 </div> 
 
