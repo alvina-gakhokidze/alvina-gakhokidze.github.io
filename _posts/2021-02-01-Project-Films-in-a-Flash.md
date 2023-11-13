@@ -77,7 +77,7 @@ The next step is all of the python code!
 
 ### The Ugly Code
 
-Our first script will collect the data that the Arduino code prints on the serial monitor. Because the Arduino code prints the R G B values on one line, we will put each line into a list of its own with 3 entries (called temp_list)- one for each colour value. These small lists will be put into one large list, which I’ve named the rgb_list. The following site explains how to read the serial monitor through python: https://problemsolvingwithpython.com/11-Python-and-External-Hardware/11.04-Reading-a-Sensor-with-Python/. 
+Our first script will collect the data that the Arduino code prints on the serial monitor. Because the Arduino code prints the R G B values on one line, we will put each line into a list of its own with 3 entries (called temp_list)- one for each colour value. These small lists will be put into one large list, which I’ve named the rgb_list. The following site explains how to read the serial monitor through python: [Reading the Serial Monitor](https://problemsolvingwithpython.com/11-Python-and-External-Hardware/11.04-Reading-a-Sensor-with-Python/). 
 
 The code below already follows these steps. 
 
@@ -114,11 +114,11 @@ ser.close()
 NOTE: Once you get your art up and loaded, you might see that your stripes are too dark. This happened to me because my computer did not generate enough light for the phototransistors to read values anywhere near 1023. Considering this, you might want to tailor your values; i.e., find the maximum value of light that the phototransistors will detect, then in the map() function, instead of listing 1023 as the high for the value you are scaling from, list the maximum value instead. This way, there will be a better range of brightness in your art.
 
 <b>Some important notes regarding this website:  </b>
-1. You may need to install Pyserial first: https://problemsolvingwithpython.com/11-Python-and-External-Hardware/11.01-PySerial/
+1. You may need to install Pyserial first: [PySerial](https://problemsolvingwithpython.com/11-Python-and-External-Hardware/11.01-PySerial/)
     * I recommend doing this through the terminal and not through VS code itself. Simple type “python”  in the command line, hit enter, and then follow the commands in the site.
 2. The name of your Arduino port may not be in the format that they have specified. For example, my port is /dev/cu.usbmodem14201, as you’ll see in the code.
 
-After you have completed these steps, it’s time to get our hands dirty! The way we’re going to display the colour of each frame is by printing a very thin rectangle with the combined RGB colour onto the screen. To accomplish this, we’ll use Pyp5JS, which is a fairly good program for beginners. To start, follow the instructions in the given site to install the needed packages: https://berinhard.github.io/pyp5js/. 
+After you have completed these steps, it’s time to get our hands dirty! The way we’re going to display the colour of each frame is by printing a very thin rectangle with the combined RGB colour onto the screen. To accomplish this, we’ll use Pyp5JS, which is a fairly good program for beginners. To start, follow the instructions in the given site to install the needed packages: [Installing Pyp5js](https://berinhard.github.io/pyp5js/). 
 
 
 Note: To avoid confusion, simply follow the steps from the “Installation” section and the “QuickStart” section. After completing the instructions in the “QuickStart” section, you’ll get a specific address, simply copy and paste that into your browser and you’ll be on the site where all of our artwork will be printed!
