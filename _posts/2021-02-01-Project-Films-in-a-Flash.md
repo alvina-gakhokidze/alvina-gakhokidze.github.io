@@ -16,12 +16,10 @@ I created a python program that produces generative art when a video clip is dis
 The image on the left was produced from a clip from the movie “Shrek”, and the image on the right was produced from a clip of the tv show “Haikyu!!”.
 <p>
  <div class="row">
-    <img src="/assets/images/Shrek_Barcode.png" style="width:100%">  
-    <img src="/assets/images/Haikyu_Barcode.png" style="width:100%">
+    <img src="/assets/images/Shrek_Barcode.png" style="width:40%">  
+    <img src="/assets/images/Haikyu_Barcode.png" style="width:40%">
 </div> 
 </p>
-
-<p><img src="../shrekbarcode.png"/></p>
 
 
 
