@@ -34,11 +34,10 @@ This will not be a detailed walkthrough, but here are the general steps I used:
 1. Research, research, and research. Understanding how encoders work, how stepper motors work, and how you can use one to control the other. All relevant links are included above.
 2. Picking a motor that is strong enough to push the beacon's arm (according to calculations done by my fellow mechanical engineering student)
 3. Once the motor was picked, I chose motor drivers that were strong enough to power the motors that I had chosen and had the correct increment size.
-4. Designing the circuit that would connect all of the components together, including using any recommended circuits provided by their datasheets and corresponding websites. This is what my hand-drawn schematic looks like:
-
+4. Designing the circuit that would connect all of the components together, including using any recommended circuits provided by their datasheets and corresponding websites. My hand-drawn schematic is shown below. 
+5. Now came time to work on the code. I started from a very basic set of code and simply made my stepper motor take very slow steps and read the encoder output with the Digital Logic Analyzer.
 <img src="/assets/images/tracking_beacon_schematic.png" style="width:60%">
 
-5. Now came time to work on the code. I started from a very basic set of code and simply made my stepper motor take very slow steps and read the encoder output with the Digital Logic Analyzer.
 
   Unfortunately, while I was able to develop the control code for the motors, I was unable to make it work because of the really erratic behavior of the encoders. 
   With every step of the motor, the encoder would vibrate many times back and forth. No matter how many times I analyzed it, I could not determine a consistent pattern for the amount of times it would vibrate.
