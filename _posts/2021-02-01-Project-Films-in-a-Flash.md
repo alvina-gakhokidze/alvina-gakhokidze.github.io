@@ -5,8 +5,9 @@ categories: art
 author:
 - Alvina
 ---
+<b> Disclaimer:</b> I am publishing this written tutorial almost two years after I had completed the project. So there may be some incomplete code, and missing references for code borrowed. The execution is my own, though I may have borrowed small code tidbits from other sources. 
 
-This idea was inspired by Tumblr user MovieBarcode (https://moviebarcode.tumblr.com/). I decided to create my own version of this art using my Arduino set, photoresistors, and p5.js library. 
+This idea was inspired by Tumblr user MovieBarcode ([moviebarcode](https://moviebarcode.tumblr.com/)). I decided to create my own version of this art using my Arduino set, photoresistors, and p5.js library. 
 
 ## Quick Description
 
@@ -23,7 +24,7 @@ The image on the left was produced from a clip from the movie “Shrek”, and t
 - Basic resistors/wires/etc
 
 ## Helpful Links for Explorers
-- [jekyll](https://p5js.org/)
+- [p5js.org](https://p5js.org/)
 
 ## Step By Step Playthrough
 
@@ -153,7 +154,7 @@ The width and height of each individual rectangle will depend on how many times 
 
 NOTE: The program will not work if you give a float value for the dimensions of the rectangles. Make sure to convert the rec_space variable into an integer like I have done. This will round the value down, and most likely you will not use the whole canvas space - but because it is white, we won’t even notice it. 
 
-The final addition to the code is:
+The final part of the python code is:
 
 ```html
 
@@ -173,5 +174,9 @@ with open('/Users/alvinagakhokidze/sketchbook-pyp5js/rrgb/rrgb.py','a+') as f:
 
 # start = f.index("colorMode(RGB, 100)") + 18
 ```
+This code opens an empty text file (that I created and put in the folder in advance), and writes the commands to it. 
 
+Unfortunately, given that I am writing this too late, I do not remember the last step of how to sync this with p5.js. The "brute-force" way of doing it is to copy and paste the results of the overwritten text file into the p5.js interface and have it do it for you then. But if I recall correctly there is a way to automate it as well. 
+
+Best of luck to whoever is interested in attempting a similar project, and I hope this (incomplete) tutorial can help!
 
