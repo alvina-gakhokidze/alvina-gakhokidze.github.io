@@ -5,7 +5,7 @@ author:
 - Alvina
 ---
 
-<p>Status:</p> Completed Electrical Project for ELEC 291, a course at UBC
+<b>Status:</b> Completed Electrical Project for ELEC 291, a course at UBC
 
 ## Quick Description
 The goal of this project was to design a magnetic field-controlled robot. It consists of two parts - are transmitter with two big inductors, and a receiver (the car). 
