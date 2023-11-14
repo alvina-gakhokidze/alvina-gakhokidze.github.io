@@ -59,6 +59,6 @@ This took approximately 18 consecutive hours of work and I received the Dick Edw
 2. July 2021, Assistant CEO in the 2021 International Space Settlement Design Competition - Helped the CEOs manage a group of 60 students
 3. July 2022, CEO in the 2022 International Space Settlement Design Competition - Managed a group of 60 students.
 
-Throughout these competitions, I acted as a mentor to students. I taught them different engineering concepts, such as using idea-generation processes, conducting trade studies, collaborating with other students, and more. I pulled all-nighters to provide support to these students and collaborated with other university-level students and industry professionals to ensure that the secondary school students had the best possible competition experience :)
+Throughout these competitions, I acted as a mentor to students. I taught them different engineering concepts, such as using idea-generation processes, conducting trade studies, collaborating with other students, and more. I pulled all-nighters to provide support to these students and collaborated with other university-level students and industry professionals to ensure that the participants had the best possible competition experience :)
 
 
