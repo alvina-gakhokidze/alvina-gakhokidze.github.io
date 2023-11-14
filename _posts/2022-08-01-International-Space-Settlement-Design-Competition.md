@@ -6,7 +6,7 @@ author:
 - Alvina
 ---
 
-The International Space Settlement Design Competition Experience (ISSDC) competition I participated in as a high school student, and later on volunteered for as a university student. You can find the information on [Space Settlement Design Competitions](https://spaceset.org/what/). 
+The International Space Settlement Design Competition Experience (ISSDC) competition I participated in as a high school student, and later on volunteered for as a university student. You can find the information on [Spaceset.org - Space Settlement Design Competitions](https://spaceset.org/what/). 
 
 ## Quick Description
 The ISSDC is a simulated industry experience that lets students act as engineers and respond to a hypothetical Request for Proposal (RFP) over the course of a few days. First, there are regional competitions (I participated in the Canadian ones), and students who qualify are then invited to the international competition, which takes place in Florida. Professional NASA, Boeing (and more) volunteer to be "CEOs" of the student "companies" and mentor students during the design process. 
