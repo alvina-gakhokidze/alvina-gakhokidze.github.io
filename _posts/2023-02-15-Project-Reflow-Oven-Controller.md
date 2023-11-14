@@ -28,6 +28,7 @@ We took that basic idea and worked on the logic required to make a changing PWM 
 * Finite State Machines
 * Circuit Design and Debugging
 * Pulse Coded Modulation
+* Interrupts, Timers, etc. in Assembly.
 
 Here is a photo of the final breadboard. Unfortunately, I did not take a video of how this project worked :(
 
