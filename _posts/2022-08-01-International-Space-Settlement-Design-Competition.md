@@ -24,7 +24,7 @@ Below is a summary of my times participating and volunteering:
 
 #### July 2019 Finals
 
-This year, the team I was on won first place in the competition. I was on the structural engineering team, and if you click on the photo below, it will lead you to a newspaper article about this competition by Amy Reid [‘Very surreal’: B.C. students help design space colony in NASA-backed competition](https://www.trailtimes.ca/news/very-surreal-b-c-students-help-design-space-colony-in-nasa-backed-competition-5039104). 
+This year, the team I was on won first place in the competition. I was on the structural engineering team, and if you click on the following link, it will lead you to a newspaper article about this competition by Amy Reid [‘Very surreal’: B.C. students help design space colony in NASA-backed competition](https://www.trailtimes.ca/news/very-surreal-b-c-students-help-design-space-colony-in-nasa-backed-competition-5039104). 
 
 <img src="/assets/images/newspaper_article.png" style="width:60%">
 
