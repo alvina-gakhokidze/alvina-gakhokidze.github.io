@@ -28,7 +28,7 @@ In the May 2020 finals, I wrote a 3000-word proposal, designing a space settleme
 
 I designed the space settlement in Minecraft (including showing the construction sequence), and drew the various robots and designs myself. 
 
-<img src="/assets/images/minecraft_construction.jpg" style="width:60%">
+<img src="/assets/images/minecraft_construction.png" style="width:60%">
 
 
 <img src="/assets/images/robots_1.jpg" style="width:60%">
@@ -37,7 +37,7 @@ I designed the space settlement in Minecraft (including showing the construction
 <img src="/assets/images/robots_2.jpg" style="width:60%">
 
 
-<img src="/assets/images/surface_alignment.jpg" style="width:60%">
+<img src="/assets/images/surface_alignment.png" style="width:60%">
 
 #### July 2020 Finals
 
