@@ -32,7 +32,7 @@ We took that basic idea and worked on the logic required to make a changing PWM 
 
 Here is a photo of the final breadboard. Unfortunately, I did not take a video of how this project worked :(
 
-<img src="/assets/images/reflow_oven.jpg" style="width:60%">
+<img src="/assets/images/reflow_oven_2.jpg" style="width:60%">
   
 
 
