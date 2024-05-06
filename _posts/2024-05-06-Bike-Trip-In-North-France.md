@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Projects as a Junior Electrical Designer at Ziyutec Inc."
+title: "A Bike Trip to the North of France"
 author:
 - Alvina
 ---
