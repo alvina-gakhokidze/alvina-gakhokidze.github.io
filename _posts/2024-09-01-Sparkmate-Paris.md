@@ -10,7 +10,7 @@ I did a 4-month co-op at the Sparkmate Paris office from May - September of 2024
 
 ## Oria Marine VDR
 
-Oria Marine and Sparkmate collaborated to make a box that monitored boat fuel-efficiency, and displayed other statistics. These boxes were used during the Paris 2024 Olympics at the sailing competition in Marseilles, France! To read more about Oria Marine, visit their home page here: [Oria Marine] (https://www.oria-marine.com/). 
+Oria Marine and Sparkmate collaborated to make a box that monitored boat fuel-efficiency, and displayed other statistics. These boxes were used during the Paris 2024 Olympics at the sailing competition in Marseilles, France! To read more about Oria Marine, visit their home page here: [Oria Marine](https://www.oria-marine.com/). 
 
 For this product, I worked on two projects. One was developing a prototype firmware that would track the force and frequency of the impacts that the boat would experiene while on the water. The second project was working on the main, existing firmware of Oria Marine and fixing several large issues that prevented the code from running. The firmware was written in C++ and utilized RTOS, both of which I was not familiar with prior to the project. Debugging RTOS firmware is much more difficult than debugging software because it is challenging to step through real-time dependent code. And becuase the product was on a PCB and utilized almost all of the microcontroller pins, JTAG debuggers were not an option. 
 
