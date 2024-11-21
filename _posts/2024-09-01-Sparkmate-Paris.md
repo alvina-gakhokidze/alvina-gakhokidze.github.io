@@ -34,9 +34,32 @@ Murfy and Sparkmate collaborated to create a service that will refurbish broken 
 
 For this project, I helped create version 4 of the motherboard for the washine machines. This involved understanding the design decisions behind the previous versions, discussing additional technological needs for the new revision, and identifying areas of improvement. I created comparison tables to choose any major new equipment like microcontrollers and digital ICs for the new PCB. I designed the new schematic, specced materials, and performed revisions based on mentor feedback to perfect the circuit. I also performed work on the physical layout of the PCB, however my internship ended before I could finalize the layout. 
 
-Designing this PCB helped me familiarize myself with practical applications of many electrical engineering theories that we have learned but didn't apply - for example, filters and transistors- and also was a great learning opportunity on developing circuits for microcontroller chips, as opposed to buying already prepared dev boards. To design this PCB, I used KiCad.
+Designing this PCB helped me familiarize myself with practical applications of many electrical engineering theories that we have learned but didn't apply - for example, filters and transistors- and also was a great learning opportunity on developing circuits for microcontroller chips, as opposed to buying already prepared dev boards. In addition, I learned a lot from my mentor on how to consider not just the circuit itself, but the purchasing and manufacturing requirements to produce the board - focusing on standard component packages, minimizing discrete components, and best practices for reliable circuits. This is great knowledge to have before entering the industry as it can help reduce cost and wait times on PCBs. 
 
-For privacy, I cannot post photos of the schematics or my work, but you can see me in the picture below standing next to the ad for the company in the Parisi metro! 
+To design this PCB, I used KiCAD. Due to privacy reasons, I cannot post photos of the schematics or my work, but you can see me in the picture below standing next to the ad for the company in the Parisi metro! 
 
  <img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
+
+
+## Other Hardware Debugging Projects
+
+There were other projects that I did during my internship that were focused on hardware debugging. These were great experiences because in university, the typical hardware debugging experience that we get as students is only on your own, PERSONAL circuit: In these cases, you know your own schematic, what components do what, and it is easier to review and identify the issue. In industry, it's likely that one will have to debug a circuit they did not create. This summer was the perfect opportunity for me to be exposed to this scenario. 
+
+I reviewed complex schematics that were not my own, learned to identify functional blocks within schematics, and developed safe practices on how to test hardware in controlled environments. 
+
+One tricky scenario I ran into was that the box was buggy while operating on it's own, but somehow functioned normally everytime I would probe it with an oscillscope. Using my knowledge from past engineering projects, I was able to quickly identify that the issue was due to digital noise! And that the impedance of the oscilloscope was helping to quiet the communication line and allow for two components to communicate without issue. To warn others of this type of behaviour, and to prevent digital noise issues in the future, I wrote a small blog post for my fellow product engineers in the company on how to account for digital noise in your circuits in advance:
+
+* All digital grounds should be connected together and to the microcontroller ground pin 
+    *  Do NOT connect to the ground of a separate battery or power supply. Connect only to the ground of your microcontroller 
+        * Because ground is supposed to act like a “reference” to your signal’s highs/lows, you want devices that are communicating digitally with microcontroller to SHARE the ground with the microcontroller so that their reference is the same. 
+* Things that help with digital noise
+    * If you have a PCB, a ground plane helps with noise
+    * If you have loose wires: 
+        * Wrapping ground wires AROUND your communication wires helps
+        * Make wires as short as possible 
+        * Use pull-down/pull-up resistors so that logic is never floating
+    * Make sure the wires are reliably connected. Do not use jumper wires because the connection isn't solid. 
+
+
+
 
