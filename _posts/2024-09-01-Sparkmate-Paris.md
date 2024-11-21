@@ -1,48 +1,34 @@
 ---
 layout: post
-title: "Project: Tracking Beacon"
+title: "Projects as a Product Engineer at Sparkmate Paris"
 author:
 - Alvina
 ---
 
-<b>Status:</b> Archived project for the UBC AeroDesign Team (Sensors and Controls Subteam)
-
 ## Quick Description
-I worked on designing a closed-loop control system with stepper motors and encoders to control the movement of a tracking beacon; this beacon was supposed to point an antenna at our plane while it is flying. This project involved creating a set of requirements to select the optimal motors and encoders for our design, purchasing the components, soldering them together, and (currently) writing code to create a functioning closed-loop system.
+I did a 4-month co-op at the Sparkmate Paris office from May - September of 2024. Sparkmate is an engineering consulting company that builds unique, innovative mechanical and electrical projects. 
 
-## Materials Used
+## Oria Marine VDR
 
-- Arduino Nano RP2040 connect
-- Two stepper motors with built-in encoders [Exact Model](https://www.omc-stepperonline.com/p-series-nema-17-closed-loop-stepper-motor-48ncm-67-99oz-in-with-encoder-1000ppr-4000cpr-17e1k-05)
-- Two Motor Drivers [Exact Model](https://components101.com/modules/drv8825-stepper-motor-driver-module)
-- Salae Logic Pro Digital Logic Analyzer
-- many other tiny electrical components
-- Many, Many Websites
+Oria Marine and Sparkmate collaborated to make a box that monitored boat fuel-efficiency, and displayed other statistics. These boxes were used during the Paris 2024 Olympics at the sailing competition in Marseilles, France! To read more about Oria Marine, visit their home page here: [Oria Marine] (https://www.oria-marine.com/). 
 
-## Helpful Links for Explorers
-- [Selecting a Motor Driver](https://community.robotshop.com/tutorials/show/how-to-make-a-robot-lesson-5-choosing-a-motor-controller)
-- [How to Control a DC Motor with an Encoder](https://www.youtube.com/watch?v=dTGITLnYAY0&ab_channel=CurioRes)
-- [AccelStepper Library](https://www.airspayce.com/mikem/arduino/AccelStepper/)
-- [(pdf from Sparkfun) How to Use a Quadrature Encoder](https://cdn.sparkfun.com/datasheets/Robotics/How%20to%20use%20a%20quadrature%20encoder.pdf)
-  
-## Step By Step Playthrough
+For this product, I worked on two projects. One was developing a prototype firmware that would track the force and frequency of the impacts that the boat would experiene while on the water. The second project was working on the main, existing firmware of Oria Marine and fixing several large issues that prevented the code from running. The firmware was written in C++ and utilized RTOS, both of which I was not familiar with prior to the project. Debugging RTOS firmware is much more difficult than debugging software because it is challenging to step through real-time dependent code. And becuase the product was on a PCB and utilized almost all of the microcontroller pins, JTAG debuggers were not an option. 
 
-I was in charge of the electrical system for this project, and another mechanical engineering student on the same subteam was responsible for designing the physical beacon. 
+Working on existing firmware is challenging in its own way, because it is code that somebody else had written. The previous engineer that had created this code was no longer at the company, so I had limited help in understanding the software. However, I succesfully familiarized myself with the firmware by carefully reading through the documentation, making flow charts of the firmware, and tinkering with the functions to fully understand the functionality before attempting to fix the major existing bugs. I then used creative techniques to narrow down where the issues were in the firmware, and single-handedly developed fixes for the issues. I worked over 80 hours in one week in order to have the product ready for testing and deployment so that it would be ready in time.
 
+I also helped debug and fix the physical boxes themselves. Types of issues included, poor sim card reading, broken batteries, overheating components, and etc. 
 
-This will not be a detailed walkthrough, but here are the general steps I used:
-1. Research, research, and research. Understanding how encoders work, how stepper motors work, and how you can use one to control the other. All relevant links are included above.
-2. Picking a motor that is strong enough to push the beacon's arm (according to calculations done by my fellow mechanical engineering student)
-3. Once the motor was picked, I chose motor drivers that were strong enough to power the motors that I had chosen and had the correct increment size.
-4. Designing the circuit that would connect all of the components together, including using any recommended circuits provided by their datasheets and corresponding websites. My hand-drawn schematic is shown below. 
-5. Now came time to work on the code. I started from a very basic set of code and simply made my stepper motor take very slow steps and read the encoder output with the Digital Logic Analyzer.
-<img src="/assets/images/tracking_beacon_schematic.png" style="width:60%">
+Part of testing and debugging this product involved going to the Olympic sailing site and mounting the boxes in the boats, then running the boats to see if the box behaved as predicted. Below are some photos of me during those visits! 
 
+<img src="/assets/images/olympics_sailing_picture.JPG" style="width:60%">
+<img src="/assets/images/oria_testing.jpg" style="width:60%">
+<img src="/assets/images/oria_mounted.jpg" style="width:60%">
 
-  Unfortunately, while I was able to develop the control code for the motors, I was unable to make it work because of the really erratic behavior of the encoders. 
-  With every step of the motor, the encoder would vibrate many times back and forth. No matter how many times I analyzed it, I could not determine a consistent pattern for the amount of times it would vibrate.
-  And without a consistent pattern, I cannot properly control my motor because my code will not be able to accurately determine how many steps the motor actually took. 
+<p>
+ <div class="row">
+    <img src="/assets/images/olympics_sailing_picture.JPG" style="width:30%">
+    <img src="/assets/images/oria_testing.jpg" style="width:30%">
+    <img src="/assets/images/oria_mounted.jpg" style="width:30%">
+</div> 
+</p>
 
-Here is a sneak peak photo of my DLA output analyses:
-
-<img src="/assets/images/encoder_analysis.png" style="width:60%">
