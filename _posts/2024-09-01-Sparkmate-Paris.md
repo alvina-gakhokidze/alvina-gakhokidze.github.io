@@ -28,3 +28,15 @@ Part of testing and debugging this product involved going to the Olympic sailing
 </div> 
 </p>
 
+## Murfy Motherboard
+
+Murfy and Sparkmate collaborated to create a service that will refurbish broken washing machines in order to combat waste in France. It is an excellent environmentally-friendly business, and you can read more about them here: [Murfy](https://murfy.fr/). 
+
+For this project, I helped create version 4 of the motherboard for the washine machines. This involved understanding the design decisions behind the previous versions, discussing additional technological needs for the new revision, and identifying areas of improvement. I created comparison tables to choose any major new equipment like microcontrollers and digital ICs for the new PCB. I designed the new schematic, specced materials, and performed revisions based on mentor feedback to perfect the circuit. I also performed work on the physical layout of the PCB, however my internship ended before I could finalize the layout. 
+
+Designing this PCB helped me familiarize myself with practical applications of many electrical engineering theories that we have learned but didn't apply - for example, filters and transistors- and also was a great learning opportunity on developing circuits for microcontroller chips, as opposed to buying already prepared dev boards. To design this PCB, I used KiCad.
+
+For privacy, I cannot post photos of the schematics or my work, but you can see me in the picture below standing next to the ad for the company in the Parisi metro! 
+
+ <img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
+
