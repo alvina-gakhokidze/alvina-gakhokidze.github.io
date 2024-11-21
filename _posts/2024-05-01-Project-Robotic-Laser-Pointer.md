@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ELEC 391 - 2 DOF Robotic Laser Pointer "
+title: "Project: 2 DOF Robotic Laser Pointer for ELEC 391 Course "
 author:
 - Alvina
 ---
