@@ -20,10 +20,6 @@ I also helped debug and fix the physical boxes themselves. Types of issues inclu
 
 Part of testing and debugging this product involved going to the Olympic sailing site and mounting the boxes in the boats, then running the boats to see if the box behaved as predicted. Below are some photos of me during those visits! 
 
-<img src="/assets/images/olympics_sailing_picture.JPG" style="width:60%">
-<img src="/assets/images/oria_testing.jpg" style="width:60%">
-<img src="/assets/images/oria_mounted.jpg" style="width:60%">
-
 <p>
  <div class="row">
     <img src="/assets/images/olympics_sailing_picture.JPG" style="width:30%">
