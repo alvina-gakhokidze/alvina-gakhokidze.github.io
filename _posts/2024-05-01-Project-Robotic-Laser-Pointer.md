@@ -10,3 +10,6 @@ This was a project for our ELEC 391 course. I was in charge of the controls and 
 
 [![Video of Robotic Laser Pointer](/assets/images/robotic_laser_pointer.png)](https://youtube.com/shorts/rOckYwy4AkM?feature=share)
 
+## Unique Challenges
+
+We initially tried to develop a system model for our DC motors by tracking plotting the change in rpm while it reached full speed at a full 12V. However, because of the speed of the motors reaction, the implicit discreteness in measuring rpm, and the limited sensing capabilities of a microcontroller, the step response was very noisy, and had a lot of discontinuities. Developing a second order model based on this 
