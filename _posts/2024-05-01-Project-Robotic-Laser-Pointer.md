@@ -12,3 +12,11 @@ This was a project for our ELEC 391 course. I was in charge of the controls and 
 <video width="320" height="240" controls>
   <source src="/assets/images/Laser_Projector.MOV" type="video/mp4">
 </video>
+
+
+<video width="320" height="240" controls>
+  <source src="/assets/images/Laser_Projector.MOV" type="video/mov">
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
