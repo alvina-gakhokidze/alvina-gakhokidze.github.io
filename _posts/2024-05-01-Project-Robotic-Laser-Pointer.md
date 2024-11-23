@@ -18,3 +18,12 @@ We initially tried to develop a system model for our DC motors by tracking and p
 
 <img src="/assets/images/rpm_step_response.png" style="width:60%">
 
+Eventually, my teammates succesfully developed a very accurate and reliable encoder. I decided to use this encoder and designed a simple closed-loop proportional controller system for the motor. I tracked the closed-loop response to an input via the position of the motor. Which produced a much cleaner plot:
+
+<img src="/assets/images/p_controller_response.png" style="width:60%">
+
+Instead of taking the derivative of the position to get RPM like the first time, I instead made a second order approximation for this plot, then worked backwards to figure out the system model from the negative-feedback closed-loop model equation: 
+
+<p style="text-align: center"> Closed Loop Equation  = Forward_Path / (1 + Forward_Path * Backward_Path) </p>
+
+From there, I developed gains using multiple methods such as Q-design and as well as a newtonian search method for optimal zero placement based on ultimate gain optimization. Since the two motors had different loads - ie one motor was just spinning the little laser, and the bottom motor was carrying the entire weight of the top motor, it turned out that different PID design methods worked for the different methods. 
