@@ -26,6 +26,6 @@ Instead of taking the derivative of the position to get RPM like the first time,
 
 <p style="text-align: center"> Closed Loop Equation  = Forward_Path / (1 + Forward_Path * Backward_Path) </p>
 
-From there, I developed gains using multiple methods such as Q-design and as well as a newtonian search method for optimal zero placement based on ultimate gain optimization. Since the two motors had different loads - ie one motor was just spinning the little laser, and the bottom motor was carrying the entire weight of the top motor, it turned out that different PID design methods worked for the different methods. The general control loops, without the particular gains is as depicted below:
+From there, I developed gains using multiple methods such as Q-design and as well as a newtonian search method for optimal zero placement based on ultimate gain optimization. Since the two motors had different loads - ie one motor was just spinning the little laser, and the bottom motor was carrying the entire weight of the top motor, it turned out that different PID design methods worked for the different methods. The general control loop, without the particular gains is as depicted below:
 
 <img src="/assets/images/control_loop_image.png" style="width:60%">
