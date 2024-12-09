@@ -20,7 +20,6 @@ Below are the fundamental engineering classes I have taken so far:
       <ul>
        <li> ELEC 391: Electrical Engineering Design Studio II </li>
        <li> ELEC 342: Electro-Mechanical Energy Conversion and Transmission </li>
-       <li> ELEC 342: Electro-Mechanical Energy Conversion and Transmission </li>
        <li> ELEC 341: Systems and Control </li>
        <li> ELEC 301: Electronic Circuits</li>
        <li> ELEC 311: Electromagnetic Fields and Waves</li>
