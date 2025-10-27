@@ -10,6 +10,8 @@ Gordon Lab is dedicated to understanding and exploring the neuroscience of anima
 
 For this project, I led the complete redesign for their STROBE system - scrapping the old, single MOSFET switch circuit for a controllable, variable LED driver that can vary both the power output of the LED, and the flashing frequency. I also designed scalable RTOS firmware to control the new STROBE module and allow for the future expansion to accomodate more LEDs. Lastly, I designed a control system that would autonomously search for the optimal light intensity and flashing frequency that would cause the fruit flies to consume the most amount of food. 
 
+[![Video of new FlyPAD and STROBE System](/assets/images/FLYPAD_system.png)](https://youtu.be/FnDn5uq8m3k)
+
 ## Designing a Constant-Current Controlled LED Driver
 
 The client desired the ability to control the brightness of the LEDs in order to vary the impact on the neurons of the flies, and also wanted to experiment having the LEDs flash at different frequencies to determine if that also had an impact on the fruit flies. 
@@ -44,12 +46,9 @@ The firmware uses freeRTOS - a real-time operating system kernel that enables mu
 
 The following figure summarizes the main components in the firmware used to control the STROBE:
 
-
  <img src="/assets/images/STROBE_firmware_flow.png" style="width:60%">
 
-
 The firmware is open source and can be found here: [https://github.com/alvina-gakhokidze/STROBE_firmware]
-
 
 ## Designing a Control System
 
@@ -98,8 +97,9 @@ We can use peak time as the starting period of our perturbation signal. If testi
 
 Period of Perturbation Signal: 50 seconds
 
+The following figure shows a simulated response of the extremum-seeking controller when searching for the maximum of a parabola that is a rough approximation of the data from the very first image with the research data. The controller can accurately find the peak power within +- 0.2W. 
 
-Figure 3 shows a simulated response of the extremum-seeking controller when searching for the maximum of a parabola that is a rough approximation of the data from Figure 1. The controller can accurately find the peak power within +- 0.2W. 
+ <img src="/assets/images/STROBE_control_output.png" style="width:60%">
 
 Take a look at the STROBE firmware to see how this control system was implemented. 
 
