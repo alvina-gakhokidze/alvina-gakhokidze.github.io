@@ -14,17 +14,17 @@ For this project, I led the complete redesign for their STROBE system - scrappin
 
 ## Designing a Constant-Current Controlled LED Driver
 
-The client desired the ability to control the brightness of the LEDs in order to vary the impact on the neurons of the flies, and also wanted to experiment having the LEDs flash at different frequencies to determine if that also had an impact on the fruit flies. 
+The client desired the ability to control the brightness of the LEDs in order to vary the impact on the neurons of the flies, and also wanted to experiment having the LEDs flash at different frequencies to determine if that had an impact on the fruit flies. 
 
-Given these requirements, an adjustable constant current driver was the best solution. It can regulate the current through the LEDs and produce a constant brightness. The most straightforward choice was to use a MOSFET switching circuit, but unlike the old STROBE, it would have a varying input signal instead of just 0V and +3.3V. When saturated, the transistor will act like a constant current source with a current proportional to the gate voltage applied.
+Given these requirements, an adjustable constant current driver was the best solution. It would be able to regulate the current through the LEDs and produce a constant brightness. The most straightforward choice was to use a MOSFET switching circuit, but unlike the old STROBE, it would have a varying input signal instead of just 0V and +3.3V. When saturated, the transistor would act like a constant current source with a current proportional to the gate voltage applied.
 
-Multiple circuits were designed, and the one that performed best under prototype used a DAC in order to allow us to control the voltage in the circuit with a digital signal from a microcontroller. The DAC output is sent to the amplifier, and the amplifier acts like a control system and ensures that the voltage across the resistor (which directly corresponds to the current through the LED) matches the DAC output. 
+Multiple circuits were designed, and the one that performed best under prototype used a DAC in order to allow us to control the voltage through the circuit with a digital signal from a microcontroller. The DAC output is sent to an amplifier, and the amplifier acts like a control system and ensures that the voltage across the resistor (which directly corresponds to the current through the LED) matches the DAC output. 
 
 The product went from this scrappy prototype... 
 
 <img src="/assets/images/STROBE_prototype.jpg" style="width:60%">
 
-To this beautiful PCB: IF you click on the images below, you can see a video of the features in operation!
+To this beautiful PCB: To see it flash click [here](https://youtube.com/shorts/DJE-T6lSuZ8?feature=share) and to see the power vary click [here](https://youtube.com/shorts/DJE-T6lSuZ8?feature=share)
 
 <p>
  <div class="row">
