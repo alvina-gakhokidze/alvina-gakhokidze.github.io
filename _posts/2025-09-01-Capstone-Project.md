@@ -6,11 +6,11 @@ author:
 ---
 
 ## Quick Description
-Gordon Lab is dedicated to understanding and exploring the neuroscience of animal feeding behaviors, focusing on Drosophila melanogaster (fruit flies) due to their small size, short lifespan, and simple neural systems. They developed the Fly Proboscis and Activity Detector (flyPAD) to track fruit fly interactions with food and paired it with the Sip-Triggered Optogenetic Behavior Enclosure (STROBE) to manipulate neural activity. Using light, they can manipulate how fruit flies perceive the food that they eat, and make them like undesirable food, or hate delicious food like sugar.  
+Gordon Lab is dedicated to understanding and exploring the neuroscience of animal feeding behaviors, focusing on Drosophila melanogaster (fruit flies) due to their small size, short lifespan, and simple neural systems. They developed the Fly Proboscis and Activity Detector (flyPAD) to track fruit fly interactions with food and paired it with the Sip-Triggered Optogenetic Behavior Enclosure (STROBE) to manipulate neural activity. Using light, they can manipulate how fruit flies perceive the food that they eat, and make them like undesirable food, or hate delicious food like sugar. This is done by triggering the light when the fruit flight interacts with the food via a capacitive sensor: the fly sits on the sensor to eat the food, a capacitive signal is generated, and the main FPGA board sends a signal to the STROBE to turn on the corresponding LED light. 
 
 For this project, I led the complete redesign for their STROBE system - scrapping the old, single MOSFET switch circuit for a controllable, variable LED driver that can vary both the power output of the LED, and the flashing frequency. I also designed scalable RTOS firmware to control the new STROBE module and allow for the future expansion to accomodate more LEDs. Lastly, I designed a control system that would autonomously search for the optimal light intensity and flashing frequency that would cause the fruit flies to consume the most amount of food. 
 
-[![Video of new FlyPAD and STROBE System](/assets/images/FLYPAD_system.png)](https://youtu.be/FnDn5uq8m3k)
+[![Video of new FlyPAD and STROBE System](/assets/images/FLYPAD_system.png)](https://youtu.be/oVqEyYSjVts)
 
 ## Designing a Constant-Current Controlled LED Driver
 
