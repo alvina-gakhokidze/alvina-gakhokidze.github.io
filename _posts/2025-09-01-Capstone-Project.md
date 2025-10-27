@@ -6,19 +6,33 @@ author:
 ---
 
 ## Quick Description
-Gordon Lab is a UBC Zoology lab which studies how the feeding behavior of fruit flies changes in response to optogenetic (light) manipulation. For this project, I led the complete redesign for their STROBE system - scrapping the old, single MOSFET switch circuit for a controllable, variable LED driver that can vary both the power output of the LED, and the flashing frequency. I also designed scalable RTOS firmware to control the new STROBE module and allow for the future expansion to accomodate more LEDs. Lastly, I designed a control system that would autonomously search for the optimal light intensity and flashing frequency that would cause the fruit flies to consume the most amount of food. 
+Gordon Lab is dedicated to understanding and exploring the neuroscience of animal feeding behaviors, focusing on Drosophila melanogaster (fruit flies) due to their small size, short lifespan, and simple neural systems. They developed the Fly Proboscis and Activity Detector (flyPAD) to track fruit fly interactions with food and paired it with the Sip-Triggered Optogenetic Behavior Enclosure (STROBE) to manipulate neural activity. Using light, they can manipulate how fruit flies perceive the food that they eat, and make them like undesirable food, or hate delicious food like sugar.  
+
+For this project, I led the complete redesign for their STROBE system - scrapping the old, single MOSFET switch circuit for a controllable, variable LED driver that can vary both the power output of the LED, and the flashing frequency. I also designed scalable RTOS firmware to control the new STROBE module and allow for the future expansion to accomodate more LEDs. Lastly, I designed a control system that would autonomously search for the optimal light intensity and flashing frequency that would cause the fruit flies to consume the most amount of food. 
 
 ## Designing a Constant-Current Controlled LED Driver
 
-Oria Marine and Sparkmate collaborated to make a box that monitored boat fuel-efficiency, and displayed other statistics. These boxes were used during the Paris 2024 Olympics at the sailing competition in Marseilles, France! To read more about Oria Marine, visit their home page here: [Oria Marine](https://www.oria-marine.com/). 
+The client desired the ability to control the brightness of the LEDs in order to vary the impact on the neurons of the flies, and also wanted to experiment having the LEDs flash at different frequencies to determine if that also had an impact on the fruit flies. 
 
-For this product, I worked on two projects. One was developing a prototype firmware that would track the force and frequency of the impacts that the boat would experiene while on the water. The second project was working on the main, existing firmware of Oria Marine and fixing several large issues that prevented the code from running. The firmware was written in C++ and utilized RTOS, both of which I was not familiar with prior to the project. Debugging RTOS firmware is much more difficult than debugging software because it is challenging to step through real-time dependent code. And becuase the product was on a PCB and utilized almost all of the microcontroller pins, JTAG debuggers were not an option. 
+Given these requirements, an adjustable constant current driver was the best solution. It can regulate the current through the LEDs and produce a constant brightness. The most straightforward choice was to use a MOSFET switching circuit, but unlike the old STROBE, it would have a varying input signal instead of just 0V and +3.3V. When saturated, the transistor will act like a constant current source with a current proportional to the gate voltage applied.
 
-Working on existing firmware is challenging in its own way, because it is code that somebody else had written. The previous engineer that had created this code was no longer at the company, so I had limited help in understanding the software. However, I succesfully familiarized myself with the firmware by carefully reading through the documentation, making flow charts of the firmware, and tinkering with the functions to fully understand the functionality before attempting to fix the major existing bugs. I then used creative techniques to narrow down where the issues were in the firmware, and single-handedly developed fixes for the issues. I worked over 80 hours in one week in order to have the product ready for testing and deployment so that it would be ready in time.
+Multiple circuits were designed, and the one that performed best under prototype used a DAC in order to allow us to control the voltage in the circuit with a digital signal from a microcontroller. The DAC output is sent to the amplifier, and the amplifier acts like a control system and ensures that the voltage across the resistor (which directly corresponds to the current through the LED) matches the DAC output. 
 
-I also helped debug and fix the physical boxes themselves. Types of issues included, poor sim card reading, broken batteries, overheating components, and etc. 
+The product went from this scrappy prototype... 
 
-Part of testing and debugging this product involved going to the Olympic sailing site and mounting the boxes in the boats, then running the boats to see if the box behaved as predicted. Below are some photos of me during those visits! 
+<img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
+
+
+
+
+To this beautiful PCB: IF you click on the images below, you can see a video of the features in operation!
+
+<img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
+
+
+
+
+
 
 <p>
  <div class="row">
@@ -30,35 +44,75 @@ Part of testing and debugging this product involved going to the Olympic sailing
 
 ## Designing RTOS Firmware for a Scalable LED Driver
 
-Murfy and Sparkmate collaborated to create a service that will refurbish broken washing machines in order to combat waste in France. It is an excellent environmentally-friendly business, and you can read more about them here: [Murfy](https://murfy.fr/). 
+To control the LEDs, C++ firmware was developed for the ESP32. With the firmware, the ESP32 controls the DAC and the rest of the circuit hardware reacts accordingly to turn on and flash the LEDs.
 
-For this project, I helped create version 4 of the motherboard for the washine machines. This involved understanding the design decisions behind the previous versions, discussing additional technological needs for the new revision, and identifying areas of improvement. I created comparison tables to choose any major new equipment like microcontrollers and digital ICs for the new PCB. I designed the new schematic, specced materials, and performed revisions based on mentor feedback to perfect the circuit. I also performed work on the physical layout of the PCB, however my internship ended before I could finalize the layout. 
+The image below summarizes the general flow of STROBE operation. The microcontroller on the STROBE board wirelessly receives a signal from the broadcast controller, then sends signals to the DAC to turn on/off the LED at the requested frequency and power. The rest of the circuit ensures the current is controlled and precise.
 
-Designing this PCB helped me familiarize myself with practical applications of many electrical engineering theories that we have learned but didn't apply - for example, filters and transistors- and also was a great learning opportunity on developing circuits for microcontroller chips, as opposed to buying already prepared dev boards. In addition, I learned a lot from my mentor on how to consider not just the circuit itself, but the purchasing and manufacturing requirements to produce the board - focusing on standard component packages, minimizing discrete components, and best practices for reliable circuits. This is great knowledge to have before entering the industry as it can help reduce cost and wait times on PCBs. 
+<img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
 
-To design this PCB, I used KiCAD. Due to privacy reasons, I cannot post photos of the schematics or my work, but you can see me in the picture below standing next to the ad for the company in the Parisi metro! 
+
+The firmware uses freeRTOS - a real-time operating system kernel that enables multi-tasking. Multi-tasking allows for the controller to switch between functions quickly, creating the illusion of different code running in parallel - i.e., using the principle of concurrency. Using concurrency instead of sequential programming allows both LEDs to be controlled seamlessly without delay - this is crucial because the client wants to minimize the delay in toggling the LEDs when the flies are eating. 
+
+The following figure summarizes the main components in the firmware used to control the STROBE:
+
 
  <img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
 
 
+The firmware is open source and can be found here: [https://github.com/alvina-gakhokidze/STROBE_firmware]
+
+
 ## Designing a Control System
 
-There were other projects that I did during my internship that were focused on hardware debugging. These were great experiences because in university, the typical hardware debugging experience that we get as students is only on your own, PERSONAL circuit: In these cases, you know your own schematic, what components do what, and it is easier to review and identify the issue. In industry, it's likely that one will have to debug a circuit they did not create. This summer was the perfect opportunity for me to be exposed to this scenario. 
+Given (past research) [https://elifesciences.org/articles/45636] that has been done by Gordon Lab, we can see that the relationship between input power and the cumulative bites taken by the flies in response to the optogenetic manipulation is not linear:
 
-I reviewed complex schematics that were not my own, learned to identify functional blocks within schematics, and developed safe practices on how to test hardware in controlled environments. 
+ <img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
 
-One tricky scenario I ran into was that the box was buggy while operating on it's own, but somehow functioned normally everytime I would probe it with an oscillscope. Using my knowledge from past engineering projects, I was able to quickly identify that the issue was due to digital noise! And that the impedance of the oscilloscope was helping to quiet the communication line and allow for two components to communicate without issue. To warn others of this type of behaviour, and to prevent digital noise issues in the future, I wrote a small blog post for my fellow product engineers in the company on how to account for digital noise in your circuits in advance:
+The objective of the control system is to find the optimal lighting intensity and flashing frequency that maximizes how much the fruit flies eat, for the condition that uses light to make fruit flies like undesirable food. 
 
-* All digital grounds should be connected together and to the microcontroller ground pin 
-    *  Do NOT connect to the ground of a separate battery or power supply. Connect only to the ground of your microcontroller 
-        * Because ground is supposed to act like a “reference” to your signal’s highs/lows, you want devices that are communicating digitally with microcontroller to SHARE the ground with the microcontroller so that their reference is the same. 
-* Things that help with digital noise
-    * If you have a PCB, a ground plane helps with noise
-    * If you have loose wires: 
-        * Wrapping ground wires AROUND your communication wires helps
-        * Make wires as short as possible 
-        * Use pull-down/pull-up resistors so that logic is never floating
-    * Make sure the wires are reliably connected. Do not use jumper wires because the connection isn't solid. 
+Given that the system isn't linear, that it dynamically changes as the experiment progresses (due to the fruit flies gradually being impacted by the stimulation, and also their hunger levels changing, food evaporating, etc), and that the objective is to <b> maximize </b> their consumption, a standard PID controller does not make sense for this application. Instaed, an extremum-seeking controller would be a better fit!
+
+ <img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
+
+The image above shows the general structure of an extremum seeking controller
+
+This controller is similar to the newtonian-search method, where there is a “base” point of interest. The three main characteristics of this system are: 
+* Modulation Value: To search for a peak value, we check above and below the point to see which direction to continue in (i.e. continue increasing or decreasing)  to maximize our value of interest - this is done by the modulation module which perturbs the input signal to the system. 
+* Base Value: The value around which we check which direction to continue in is decided by the demodulation and parameter update modules. 
+* Step Size: The demodulater and integrator allow for the step size of this search method to automatically adjust and become more precise as the maximum value is approached.
+
+To develop accurate parameters for the ESC and to be able to execute the controller in firmware, we need to make the data that the flyPAD system collects usable, and also determine our perturbation signal length. The flyPAD tells us what food the fruit fly is eating, and an estimate of the volume consumed. Data was provided for past experiments, and for the initial design we will be focusing on stimulating the neuron that results in “extreme feeding behaviour.” This is because the impact of this stimulation is the most obvious and observable in the fruit fly (resulting in up to 7000 bites in one experiment).
+
+2. Filtering Data
+It is necessary to apply a filter to the data first, otherwise any approximations of LTI manipulations are too noisy. A good way to judge the smoothness of this data was to aim for a smooth
+derivative, which resembles an under-damped second-order step response when filtered properly.
+
+ <img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
+ 
+A moving average filter was first created to determine a baseline “smoothness” that was acceptable, and then a weighted design filter was created to match that same smoothness. The advantage of the weighted filter is that the average age of the data is a lot smaller when using the same number of samples. However, after modelling, it turns out that for the weighted sum filter’s smoothing effect to match the moving average filter, a lot more samples have to be used, as shown in the following table:
 
 
+ <img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
+
+The memory cost of storing 80% more samples for only a 4 second reduction in delay is not effective. A similar effect could be created by slightly reducing the samples of the moving average filter. Therefore, it is best to use the moving average filter. 
+
+Lastly, I measured the average period between fruit fly bites to determine how long the perturbation signal needs to be. Developing histograms of the experiments shows us that the fruit flies interact with the food approximately every 0-3 seconds.
+
+Next, we needed to determine how long it takes for fruit fly behaviour to react to optogenetic experiments. This was done by looking at the rate at which they bite - the bites/second, and in the below image we can see that the step response has a similar shape to a 2nd order step response. Thus, we can measure rise/peak/settle time to see how long it takes for the fruit flies to react. 
+
+The times were measured for all eight experiments provided by the client, and the values were averaged:
+
+
+ <img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
+
+We can use peak time as the starting period of our perturbation signal. If testing shows that this is too short to have a major effect, we will increase the time. However, it is not ideal to increase the period as it will make the experiment take longer than an hour. 
+
+Period of Perturbation Signal: 50 seconds
+
+
+Figure 3 shows a simulated response of the extremum-seeking controller when searching for the maximum of a parabola that is a rough approximation of the data from Figure 1. The controller can accurately find the peak power within +- 0.2W. 
+
+Take a look at the STROBE firmware to see how this control system was implemented. 
+
+It takes 2-3 hours for the control system to find the peak conditions. Unfortunately, the experiments can realistically only last about 1 hour, because the food source will evaporate (even in a humidity chamber). Therefore, it is not currently realistic to put this control system to use. However, even after extensive parameter tuning and experimentation, there was no way to bring the simulation time down - it may require intervention on the side of the hardware, the food source, or the humidity chamber to extend the possible testing time. Currently, the feature is disabled in the firmware. 
 
