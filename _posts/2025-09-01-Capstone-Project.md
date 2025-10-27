@@ -69,39 +69,34 @@ This controller is similar to the newtonian-search method, where there is a “b
 * Base Value: The value around which we check which direction to continue in is decided by the demodulation and parameter update modules. 
 * Step Size: The demodulater and integrator allow for the step size of this search method to automatically adjust and become more precise as the maximum value is approached.
 
-To develop accurate parameters for the ESC and to be able to execute the controller in firmware, we need to make the data that the flyPAD system collects usable, and also determine our perturbation signal length. The flyPAD tells us what food the fruit fly is eating, and an estimate of the volume consumed. Data was provided for past experiments, and for the initial design we will be focusing on stimulating the neuron that results in “extreme feeding behaviour.” This is because the impact of this stimulation is the most obvious and observable in the fruit fly (resulting in up to 7000 bites in one experiment).
+To develop accurate parameters for the ESC and to be able to execute the controller in firmware, we need to make the data that the flyPAD system collects usable, and also determine our perturbation signal length. The flyPAD tells us what food the fruit fly is eating, and an estimate of the volume consumed. Data was provided for past experiments, and for the initial design we focused on stimulating the neuron that results in “extreme feeding behaviour.” This is because the impact of this stimulation was the most obvious and observable in the fruit fly (resulting in up to 7000 bites in one experiment).
 
 2. Filtering Data
-It is necessary to apply a filter to the data first, otherwise any approximations of LTI manipulations are too noisy. A good way to judge the smoothness of this data was to aim for a smooth
-derivative, which resembles an under-damped second-order step response when filtered properly.
+It was necessary to apply a filter to the data first, otherwise any approximations of LTI manipulations would be too noisy. A good way to judge the smoothness of this data was to aim for a smooth derivative, which resembles an under-damped second-order step response when filtered properly.
 
  <img src="/assets/images/STROBE_filtered_data.png" style="width:60%">
  
-A moving average filter was first created to determine a baseline “smoothness” that was acceptable, and then a weighted design filter was created to match that same smoothness. The advantage of the weighted filter is that the average age of the data is a lot smaller when using the same number of samples. However, after modelling, it turns out that for the weighted sum filter’s smoothing effect to match the moving average filter, a lot more samples have to be used, as shown in the following table:
-
+A moving average filter was first created to determine a baseline “smoothness” that was acceptable, and then a weighted design filter was created to match that same smoothness. The advantage of the weighted filter was that the average age of the data wa a lot smaller when using the same number of samples. However, after modelling, it turned out that for the weighted sum filter’s smoothing effect to match the moving average filter, a lot more samples have to be used, as shown in the following table:
 
  <img src="/assets/images/STROBE_filter_comparison.png" style="width:60%">
 
-The memory cost of storing 80% more samples for only a 4 second reduction in delay is not effective. A similar effect could be created by slightly reducing the samples of the moving average filter. Therefore, it is best to use the moving average filter. 
+The memory cost of storing 80% more samples for only a 4 second reduction in delay was not effective. A similar effect could be created by slightly reducing the samples of the moving average filter. Therefore, it was best to use the moving average filter. 
 
-Lastly, I measured the average period between fruit fly bites to determine how long the perturbation signal needs to be. Developing histograms of the experiments shows us that the fruit flies interact with the food approximately every 0-3 seconds.
+Lastly, I measured the average period between fruit fly bites to determine how long the perturbation signal needs to be. Developing histograms of the experiments showed us that the fruit flies interacted with the food approximately every 0-3 seconds.
 
-Next, we needed to determine how long it takes for fruit fly behaviour to react to optogenetic experiments. This was done by looking at the rate at which they bite - the bites/second, and in the below image we can see that the step response has a similar shape to a 2nd order step response. Thus, we can measure rise/peak/settle time to see how long it takes for the fruit flies to react. 
+Next, we needed to determine how long it took for fruit fly behaviour to react to optogenetic experiments. This was done by looking at the rate at which they bite - the bites/second, and in the below image we can see that the step response has a similar shape to a 2nd order step response. Thus, we were able to measure rise/peak/settle time to see how long it took for the fruit flies to react. 
 
 The times were measured for all eight experiments provided by the client, and the values were averaged:
 
-
  <img src="/assets/images/STROBE_response_times.png" style="width:60%">
 
-We can use peak time as the starting period of our perturbation signal. If testing shows that this is too short to have a major effect, we will increase the time. However, it is not ideal to increase the period as it will make the experiment take longer than an hour. 
+We could use peak time as the starting period of our perturbation signal.
 
-Period of Perturbation Signal: 50 seconds
-
-The following figure shows a simulated response of the extremum-seeking controller when searching for the maximum of a parabola that is a rough approximation of the data from the very first image with the research data. The controller can accurately find the peak power within +- 0.2W. 
+The following figure shows a simulated response of the extremum-seeking controller when searching for the maximum of a parabola (which is a rough approximation of the data from the very first image provided by Gordon Lab). The controller can accurately find the peak power within +- 0.2W. 
 
  <img src="/assets/images/STROBE_control_output.png" style="width:60%">
 
 Take a look at the STROBE firmware to see how this control system was implemented. 
 
-It takes 2-3 hours for the control system to find the peak conditions. Unfortunately, the experiments can realistically only last about 1 hour, because the food source will evaporate (even in a humidity chamber). Therefore, it is not currently realistic to put this control system to use. However, even after extensive parameter tuning and experimentation, there was no way to bring the simulation time down - it may require intervention on the side of the hardware, the food source, or the humidity chamber to extend the possible testing time. Currently, the feature is disabled in the firmware. 
+It takes 2-3 hours for the control system to find the peak conditions. Unfortunately, the experiments can realistically only last about 1 hour, because the food source will evaporate (even in a humidity chamber). Therefore, it is not currently realistic to put this control system to use. Even after extensive parameter tuning and experimentation, there was no way to bring the simulation time down - it may require intervention on the side of the hardware, the food source, or the humidity chamber to extend the possible testing time. Currently, the feature is disabled in the firmware. 
 
