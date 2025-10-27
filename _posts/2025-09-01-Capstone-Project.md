@@ -20,25 +20,14 @@ Multiple circuits were designed, and the one that performed best under prototype
 
 The product went from this scrappy prototype... 
 
-<img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
-
-
-
+<img src="/assets/images/STROBE_prototype.jpg" style="width:60%">
 
 To this beautiful PCB: IF you click on the images below, you can see a video of the features in operation!
 
-<img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
-
-
-
-
-
-
 <p>
  <div class="row">
-    <img src="/assets/images/olympics_sailing_picture.JPG" style="width:30%">
-    <img src="/assets/images/oria_testing.jpg" style="width:30%">
-    <img src="/assets/images/oria_mounted.jpg" style="width:30%">
+    <img src="/assets/images/STROBE_final_front.jpg" style="width:45%">
+    <img src="/assets/images/STROBE_final_back.jpg" style="width:45%">
 </div> 
 </p>
 
@@ -48,7 +37,7 @@ To control the LEDs, C++ firmware was developed for the ESP32. With the firmware
 
 The image below summarizes the general flow of STROBE operation. The microcontroller on the STROBE board wirelessly receives a signal from the broadcast controller, then sends signals to the DAC to turn on/off the LED at the requested frequency and power. The rest of the circuit ensures the current is controlled and precise.
 
-<img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
+<img src="/assets/images/STROBE_general_operation.png" style="width:60%">
 
 
 The firmware uses freeRTOS - a real-time operating system kernel that enables multi-tasking. Multi-tasking allows for the controller to switch between functions quickly, creating the illusion of different code running in parallel - i.e., using the principle of concurrency. Using concurrency instead of sequential programming allows both LEDs to be controlled seamlessly without delay - this is crucial because the client wants to minimize the delay in toggling the LEDs when the flies are eating. 
@@ -56,7 +45,7 @@ The firmware uses freeRTOS - a real-time operating system kernel that enables mu
 The following figure summarizes the main components in the firmware used to control the STROBE:
 
 
- <img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
+ <img src="/assets/images/STROBE_firmware_flow.png" style="width:60%">
 
 
 The firmware is open source and can be found here: [https://github.com/alvina-gakhokidze/STROBE_firmware]
@@ -66,13 +55,13 @@ The firmware is open source and can be found here: [https://github.com/alvina-ga
 
 Given (past research) [https://elifesciences.org/articles/45636] that has been done by Gordon Lab, we can see that the relationship between input power and the cumulative bites taken by the flies in response to the optogenetic manipulation is not linear:
 
- <img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
+ <img src="/assets/images/STROBE_research_data.png" style="width:60%">
 
 The objective of the control system is to find the optimal lighting intensity and flashing frequency that maximizes how much the fruit flies eat, for the condition that uses light to make fruit flies like undesirable food. 
 
 Given that the system isn't linear, that it dynamically changes as the experiment progresses (due to the fruit flies gradually being impacted by the stimulation, and also their hunger levels changing, food evaporating, etc), and that the objective is to <b> maximize </b> their consumption, a standard PID controller does not make sense for this application. Instaed, an extremum-seeking controller would be a better fit!
 
- <img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
+ <img src="/assets/images/STROBE_esc_controller.jpg" style="width:60%">
 
 The image above shows the general structure of an extremum seeking controller
 
@@ -87,12 +76,12 @@ To develop accurate parameters for the ESC and to be able to execute the control
 It is necessary to apply a filter to the data first, otherwise any approximations of LTI manipulations are too noisy. A good way to judge the smoothness of this data was to aim for a smooth
 derivative, which resembles an under-damped second-order step response when filtered properly.
 
- <img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
+ <img src="/assets/images/STROBE_filtered_data.png" style="width:60%">
  
 A moving average filter was first created to determine a baseline “smoothness” that was acceptable, and then a weighted design filter was created to match that same smoothness. The advantage of the weighted filter is that the average age of the data is a lot smaller when using the same number of samples. However, after modelling, it turns out that for the weighted sum filter’s smoothing effect to match the moving average filter, a lot more samples have to be used, as shown in the following table:
 
 
- <img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
+ <img src="/assets/images/STROBE_filter_comparison.png" style="width:60%">
 
 The memory cost of storing 80% more samples for only a 4 second reduction in delay is not effective. A similar effect could be created by slightly reducing the samples of the moving average filter. Therefore, it is best to use the moving average filter. 
 
@@ -103,7 +92,7 @@ Next, we needed to determine how long it takes for fruit fly behaviour to react 
 The times were measured for all eight experiments provided by the client, and the values were averaged:
 
 
- <img src="/assets/images/Murfy_Ad.JPG" style="width:60%">
+ <img src="/assets/images/STROBE_response_times.png" style="width:60%">
 
 We can use peak time as the starting period of our perturbation signal. If testing shows that this is too short to have a major effect, we will increase the time. However, it is not ideal to increase the period as it will make the experiment take longer than an hour. 
 
