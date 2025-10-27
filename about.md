@@ -24,6 +24,7 @@ Below are the fundamental engineering classes I have taken so far:
        <li> ELEC 301: Electronic Circuits</li>
        <li> ELEC 311: Electromagnetic Fields and Waves</li>
        <li> STAT/ELEC 321: Stochastic Signals and Systems</li>  
+       <li> CPEN 333: Software Design for Engineers (Multithreaded Programming) </li>
      </ul>
     <li>2nd Year Courses</li>
     <ul>
