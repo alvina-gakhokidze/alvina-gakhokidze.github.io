@@ -24,7 +24,7 @@ The product went from this scrappy prototype...
 
 <img src="/assets/images/STROBE_prototype.jpg" style="width:60%">
 
-To this beautiful PCB: To see it flash click [here](https://youtube.com/shorts/DJE-T6lSuZ8?feature=share) and to see the power vary click [here](https://youtube.com/shorts/DJE-T6lSuZ8?feature=share)
+To this beautiful PCB: To see it flash click [here](https://youtube.com/shorts/S8SHngNCbLA?feature=share) and to see the power vary click [here](https://youtube.com/shorts/DJE-T6lSuZ8?feature=share)
 
 <p>
  <div class="row">
