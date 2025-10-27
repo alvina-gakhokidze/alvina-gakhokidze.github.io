@@ -52,7 +52,7 @@ The firmware is open source and can be found here: [https://github.com/alvina-ga
 
 ## Designing a Control System
 
-Given (past research) [https://elifesciences.org/articles/45636] that has been done by Gordon Lab, we can see that the relationship between input power and the cumulative bites taken by the flies in response to the optogenetic manipulation is not linear:
+Given [past research](https://elifesciences.org/articles/45636) that has been done by Gordon Lab, we can see that the relationship between input power and the cumulative bites taken by the flies in response to the optogenetic manipulation is not linear:
 
  <img src="/assets/images/STROBE_research_data.png" style="width:60%">
 
